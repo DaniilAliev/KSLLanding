@@ -1,0 +1,20 @@
+$page-color: #DCD8D0;
+$grey-color: #99958F;
+
+$tablet: 820px;
+
+@mixin sectionPos {
+  display: flex;
+}
+
+@mixin Suisse {
+  @font-face {
+    font-family: 'Suisse';
+    src: url(/src/assets/fonts/SuisseIntl-Regular.otf);
+  }
+}
+
+@mixin width1360 {
+	max-width: 1360px;
+	width: 100%;
+}

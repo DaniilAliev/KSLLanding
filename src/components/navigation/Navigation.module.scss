@@ -1,0 +1,58 @@
+@import '../../styles/variables.scss'; 
+
+nav {
+	display: flex;
+	justify-content: center;
+
+	section {
+		.container {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.logo {
+				display: flex;
+				gap: 30px;
+				align-items: center;
+
+				p {
+					width: 136px;
+				}
+			}
+			
+			.links {
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+				max-width: 395px;				
+			}
+
+			.icon {
+				display: none;
+			}
+		}
+	}
+}
+
+@media (max-width: $tablet) {
+	nav {
+		section {
+			.container {
+				.logo {
+					p {
+						display: none;
+					}
+				}
+
+				.links{
+					display: none;
+				}
+
+				.icon {
+					display: block;
+				}
+			}
+		}
+	}
+}

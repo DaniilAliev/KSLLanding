@@ -1,0 +1,35 @@
+@import '/src/styles/variables.scss';
+
+html, body {
+	padding: 0;
+	margin: 0;
+	background-color: $page-color;
+}
+
+section {
+	display: flex;
+	justify-content: center;
+	max-width: 1360px;
+	width: 100%;
+	margin: 30px 40px;
+}
+
+h1 {
+	@include Suisse;
+	font-family: 'Suisse';
+	font-size: 72px;
+	font-weight: 400;
+}
+
+p {
+	@include Suisse;
+	font-family: 'Suisse', sans-serif;
+	font-weight: 450;
+	font-size: 18px;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}

@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+	display: flex;
+	justify-content: center;
+
+	section {
+
+		.header  {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+}
+
+.swiper-container {
+	padding-left: 40px;
+
+	.mySwiper{
+			.slide {
+				width: fit-content;
+			}
+	}
+}
