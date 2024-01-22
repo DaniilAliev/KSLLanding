@@ -1,0 +1,19 @@
+@import '../../../styles/variables.scss';
+
+.button {
+	@include buttons;
+	background-color: black;
+	opacity: 0.75;
+	position: fixed;
+	bottom: 24px;
+	right: 24px;
+	z-index: 1000;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	p {
+		color: white;
+	}
+}

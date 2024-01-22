@@ -8,6 +8,13 @@ $tablet: 820px;
   display: flex;
 }
 
+@mixin buttons {
+  padding: 9px 18px;
+	border-radius: 40px;
+	border: none;
+  cursor: pointer;
+}
+
 @mixin Suisse {
   @font-face {
     font-family: 'Suisse';

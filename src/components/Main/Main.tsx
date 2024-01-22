@@ -7,6 +7,7 @@ import HighArrow from '../../assets/highArrow.svg';
 import Gerb from '../../assets/gerb.svg';
 import Download from '../../assets/download.svg';
 import { Accordeon } from './Accordeon';
+import { SideMenu } from './SideMenu';
 
 const Main = () => {
   return (
@@ -132,6 +133,8 @@ const Main = () => {
           </button>
         </section>
       </div>
+
+      <SideMenu />
     </>
   )
 }
