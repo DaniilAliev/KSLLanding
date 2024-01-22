@@ -136,9 +136,6 @@
         }
       }
     }
-
-
-
   }
 }
 
@@ -150,8 +147,23 @@
 
 @media (max-width: 500px) {
   .container aside form .flex .grid {
-    padding: 0 40px;
     width: 100%;
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .container {
+    aside {
+      form {
+        .flex {
+          .checkboxes {
+            display: block;
+
+            .checkbox {
+              padding-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
   }
 }
