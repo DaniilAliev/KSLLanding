@@ -1,0 +1,86 @@
+@import '../../../styles/variables.scss';
+
+.container {
+	position: fixed;
+	background-color: black;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10000;
+	transition: opacity 0.3s, visibility 0s linear 0.3s;
+	opacity: 0;
+	visibility: hidden;
+
+	.grid {
+		height: 100%;
+		padding: 21px;
+		display: grid;
+		grid-template-rows: 128px 1fr 76px;
+		grid-template-areas:
+			'flex'
+			'main'
+			'contacts';
+	
+		.flex {
+			grid-area: flex;
+			display: flex;
+			justify-content: space-between;
+	
+			.logo {
+				p {
+					color: white;
+					padding-top: 16px;
+					width: 121px;
+					line-height: 22px;
+				}
+			}
+		}
+	
+		.main {
+			grid-area: main;
+			height: auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			align-items: stretch;
+			padding-bottom: 74px;
+	
+			a {
+				h1 {
+					color: $page-color;
+	
+					&:hover {
+						color: white;
+					}
+				}
+			}
+		}
+	
+		.contacts {
+			grid-area: contacts;
+			border-top: 1px solid white;
+	
+			.flex {
+				padding-top: 16px;
+	
+				div {
+					display: flex;
+					gap: 24px;
+				}
+	
+				a {
+					p {
+						color: white;
+					}
+				}
+			}
+		}
+	}
+}
+
+.active {
+	transition: opacity 0.3s, visibility 0s linear 0s;
+	opacity: 1;
+	visibility: visible;
+}
