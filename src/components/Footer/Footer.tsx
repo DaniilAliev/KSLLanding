@@ -14,7 +14,6 @@ const Footer = () => {
 
   useEffect(() => {
     setRoute(router.pathname);
-    console.log(route)
   }, [router.pathname])
 
   return (
@@ -26,7 +25,7 @@ const Footer = () => {
             <img src={Logo} alt="" />
             <div>
               <a href="#" className={route === '/' ? styles.active : ''}><p>Главная</p></a>
-              <a href="#"><p>Проекты</p></a>
+              <a href="#" className={route === '/projects' ? styles.active : ''}><p>Проекты</p></a>
               <a href="#"><p>Экспертиза</p></a>
               <a href="#"><p>Компания</p></a>
             </div>

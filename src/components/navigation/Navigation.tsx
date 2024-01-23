@@ -3,14 +3,22 @@ import Logo from '../../assets/Union.png';
 import Icon from '../../assets/icon.png';
 import { CustomLink } from '../CustomLink';
 import { MobileNav } from './MobileNav';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleOpen = useCallback(() => {
     setIsOpen(prev => !prev)
-  }, [setIsOpen])
+  }, [setIsOpen]);
+
+  const router = useLocation();
+	const [route, setRoute] = useState<string>(router.pathname)
+
+  useEffect(() => {
+    setRoute(router.pathname);
+  }, [router.pathname])
 
   return (
     <nav>
@@ -22,7 +30,7 @@ const Navigation = () => {
           </div>
 
           <div className={styles.links}>
-            <CustomLink path='/'><p>Проекты</p></CustomLink>
+            <CustomLink path='/projects' route={route}><p>Проекты</p></CustomLink>
             <CustomLink path='/'><p>Экспертиза</p></CustomLink>
             <CustomLink path='/'><p>Компания</p></CustomLink>
           </div>

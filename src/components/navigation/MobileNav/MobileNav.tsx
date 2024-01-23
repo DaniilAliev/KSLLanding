@@ -3,8 +3,22 @@ import WhiteLogo from '../../../assets/whitelogo.svg'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import WhiteTelegram from '../../../assets/WhiteTelegram.svg';
 import WhiteWhatsApp from '../../../assets/WhiteWhatsApp.svg';
+import { FC, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const MobileNav = ({ isOpen, handleOpen }) => {
+type Nav = {
+	isOpen: boolean,
+	handleOpen: () => void,
+}
+
+const MobileNav:FC<Nav> = ({ isOpen, handleOpen }) => {
+	const router = useLocation();
+	const [route, setRoute] = useState<string>(router.pathname)
+
+  useEffect(() => {
+    setRoute(router.pathname);
+  }, [router.pathname])
+
 	return (
 		<div className={`${styles.container} ${isOpen ? styles.active : ''}`}>
 			<div className={styles.grid}>
@@ -30,8 +44,8 @@ const MobileNav = ({ isOpen, handleOpen }) => {
 				<div className={styles.main}>
 					<div className={styles.flex}>
 						<div>
-							<a href="#"><h1>Главная</h1></a>
-							<a href="#"><h1>Проекты</h1></a>
+							<a href="/" className={route === '/' ? styles.active : ''}><h1>Главная</h1></a>
+							<a href="/projects" className={route === '/projects' ? styles.active : ''}><h1>Проекты</h1></a>
 							<a href="#"><h1>Экспертиза</h1></a>
 							<a href="#"><h1>Компания</h1></a>
 						</div>
