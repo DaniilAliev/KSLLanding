@@ -4,17 +4,21 @@ import Icon from '../../assets/icon.png';
 import { CustomLink } from '../CustomLink';
 import { MobileNav } from './MobileNav';
 import { useCallback, useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const router = useLocation();
+  const [route, setRoute] = useState<string>(router.pathname)
 
   const handleOpen = useCallback(() => {
     setIsOpen(prev => !prev)
   }, [setIsOpen]);
 
-  const router = useLocation();
-	const [route, setRoute] = useState<string>(router.pathname)
+  useEffect(() => {
+    setIsOpen(false)
+  }, [router.pathname]);
+
 
   useEffect(() => {
     setRoute(router.pathname);
@@ -25,7 +29,7 @@ const Navigation = () => {
       <section>
         <div className={styles.container}>
           <div className={styles.logo}>
-            <a href='/'><img src={Logo} alt="logo" /></a>
+            <Link to='/'><img src={Logo} alt="logo" /></Link>
             <p>Логистический консалтинг</p>
           </div>
 
@@ -38,7 +42,6 @@ const Navigation = () => {
           <div className={styles.icon}>
             <img src={Icon} alt="Icon" onClick={handleOpen}/>
           </div>
-          
         </div>
 
         <MobileNav isOpen={isOpen} handleOpen={handleOpen}/>

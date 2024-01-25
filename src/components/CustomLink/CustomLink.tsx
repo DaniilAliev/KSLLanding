@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './CustomLink.module.scss';
 import { FC, ReactNode } from "react";
 
@@ -9,9 +10,9 @@ type CustomLink = {
 
 const CustomLink: FC<CustomLink> = ({ children, path, route }) => {
 
-  return <a href={path} className={`${styles[`custom-link`]} ${route === path ? styles.active : ''}`} >
+  return <Link to={path} className={`${styles[`custom-link`]} ${route === path ? styles.active : ''}`} >
 		{children}
-	</a>
+	</Link>
 }
 
 export { CustomLink };
