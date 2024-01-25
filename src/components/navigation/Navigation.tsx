@@ -1,4 +1,4 @@
-import styles from './navigation.module.scss';
+import styles from './Navigation.module.scss';
 import Logo from '../../assets/Union.png';
 import Icon from '../../assets/icon.png';
 import { CustomLink } from '../CustomLink';
