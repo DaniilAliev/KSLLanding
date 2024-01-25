@@ -52,7 +52,7 @@ const Accordeon = () => {
       <Accordion
         sx={accordionStyles}
         expanded={index === 0}
-        onChange={(event, expanded) => {
+        onChange={(_event, expanded) => {
           setIndex(expanded ? 0 : null);
         }}
       >
@@ -71,7 +71,7 @@ const Accordeon = () => {
       <Accordion
         sx={accordionStyles}
         expanded={index === 1}
-        onChange={(event, expanded) => {
+        onChange={(_event, expanded) => {
           setIndex(expanded ? 1 : null);
         }}
       >
@@ -89,7 +89,7 @@ const Accordeon = () => {
       <Accordion
         sx={accordionStyles}
         expanded={index === 2}
-        onChange={(event, expanded) => {
+        onChange={(_event, expanded) => {
           setIndex(expanded ? 2 : null);
         }}
       >
@@ -106,7 +106,7 @@ const Accordeon = () => {
       <Accordion
         sx={accordionStyles}
         expanded={index === 3}
-        onChange={(event, expanded) => {
+        onChange={(_event, expanded) => {
           setIndex(expanded ? 3 : null);
         }}
       >
