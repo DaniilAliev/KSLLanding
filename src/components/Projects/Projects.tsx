@@ -6,7 +6,9 @@ import { useState } from 'react';
 const selectors = ['Все', 'Пищевой ритейл', 'Интернет-магазины', "Мероприятия", "Непищевой ритейл", "Фармацевтика"]
 
 const Projects = () => {
-  const [visibleItems, setVisibleItems] = useState(6);
+  const MAX_VISIBLE = 19;
+
+  const [visibleItems, setVisibleItems] = useState(7);
 
   const handleButton = () => {
     setVisibleItems(prev => prev + 6)
@@ -45,7 +47,7 @@ const Projects = () => {
       <div className={styles.container}>
         <section>
           {
-            visibleItems !== 18 && <button onClick={handleButton}><p>Показать ещё</p></button>
+            visibleItems !== MAX_VISIBLE && <button onClick={handleButton}><p>Показать ещё</p></button>
           }
         </section>
       </div>

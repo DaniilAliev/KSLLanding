@@ -1,4 +1,12 @@
-const data = [
+export type Data = {
+  type: 'lower' | 'upper' | 'empty' | 'hole',
+  year: number | '',
+  company: string,
+  text: string,
+  image?: `${string}.png`
+}
+
+const data: Data[] = [
   {
     type: 'lower',
     year: 2019,
@@ -33,10 +41,11 @@ const data = [
     image: 'card3.png'
   },
   {
+    type: 'lower',
     year: 2020,
     company: 'Петрович',
     text: 'Аудит логистических процессов',
-    image: 'card4.png'
+    image: 'card6.png'
   },
   {
     type: 'empty',
@@ -117,10 +126,11 @@ const data = [
     text: 'Концепция и проектирование логистического центра',
   },
   {
+    type: 'lower',
     year: 2020,
     company: 'Петрович',
     text: 'Аудит логистических процессов',
-    image: 'card11.png'
+    image: 'card6.png'
   },
 ]
 
